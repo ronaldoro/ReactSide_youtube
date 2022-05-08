@@ -1,0 +1,29 @@
+.search{
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    font-size:1.5rem;
+}
+
+.search_logo{
+    color:red;
+    font-size: 1.5rem;
+}
+
+.search_input{
+    margin-left: 1rem;
+    margin-right: 0.1rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.serch_button{
+    font-size: 1.5rem;
+    padding: 0.1em 0.3em;
+    background-color: gray;
+    color: white;
+}
+
+.serch_button:active{
+    opacity: 0.8;
+}
