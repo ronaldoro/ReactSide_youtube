@@ -2,26 +2,42 @@ import React, { useRef } from 'react';
 import styles from './search.module.css'
 
 
-const Search = (props) => {
-    const intputRef = useRef();
-
-    const handleClick = () => {
-        console.log("testet");
+const Search = ({ onSearch }) => {
+    const inputRef = useRef();
+    const handleSearch = () => {
+      const value = inputRef.current.value;
+      onSearch(value);
     };
-
+    const onClick = () => {
+      handleSearch();
+    };
+  
+    const onKeyPress = event => {
+      if (event.key === 'Enter') {
+        handleSearch();
+      }
+    };
     return (
-        <form className={styles.search}>
-            <span className={styles.search_logo}>
-                <i className="fa-brands fa-youtube"></i>
-            </span>
-            Youtube
-
-            <input ref={intputRef} className={styles.search_input} type="search" placeholder=' Search...'></input>
-
-            <span className={styles.serch_button}>
-                <button className="fa-solid fa-magnifying-glass" type="submit" onClick={handleClick}></button>
-            </span>
-        </form>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <img className={styles.img} src="/images/logo.ico" alt="logo" />
+          <h1 className={styles.title}>Youtube</h1>
+        </div>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type="search"
+          placeholder="Search..."
+          onKeyPress={onKeyPress}
+        />
+        <button className={styles.button} type="submit" onClick={onClick}>
+          <img
+            className={styles.buttonImg}
+            src="/images/search.ico"
+            alt="search"
+          />
+        </button>
+      </header>
     );
 };
 
