@@ -27,8 +27,10 @@ const App = ({youtube}) => {
 
   return (
     <ul>
-      <Search onSearch={handleSearchAction}/>
-      <VideoDetail videos={seletectedVideo}/>
+      <Search onSearch={handleSearchAction} />
+      {
+        seletectedVideo && <VideoDetail video={seletectedVideo} />
+      }
       <Videolist videos={videos} onClickVideo={clickVideo}/>
     </ul>
   )
