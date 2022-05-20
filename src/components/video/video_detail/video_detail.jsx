@@ -11,6 +11,8 @@ const VideoDetail = ({ video }) => (
       frameborder="0"
       allowFullScreen
     ></iframe>
+    <h2>{video.snippet.title}</h2>
+    <h3>{video.snippet.description}</h3>
   </section>
 );
 
